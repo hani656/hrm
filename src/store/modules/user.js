@@ -11,7 +11,7 @@ const mutations = {
     // 同步到缓存
     setToken(token)
   },
-  removeToken() {
+  removeToken(state) {
     // 删除Vuex的token
     state.token = null
     removeToken()
@@ -34,6 +34,11 @@ const actions = {
   async getUserInfo(context) {
     const result = await getUserInfo()
     context.commit('setUserInfo', result)
+  },
+  // 退出登录
+  logout(context) {
+    context.commit('removeToken') // 删除token
+    context.commit('setUserInfo', {}) // 设置用户信息为空对象
   }
 }
 
