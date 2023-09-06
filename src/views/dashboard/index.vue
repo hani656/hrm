@@ -22,7 +22,6 @@ export default {
   },
   created() {
     // 初始化执行
-    // 测试
     this.$store.dispatch('user/getUserInfo')
   }
 }
