@@ -23,3 +23,17 @@ export function getManagerList() {
     url: '/sys/user/simple'
   })
 }
+
+/**
+ *
+ * 新增组织
+ *
+ * */
+
+export function addDepartment(data) {
+  return request({
+    method: 'post',
+    url: '/company/department',
+    data
+  })
+}
