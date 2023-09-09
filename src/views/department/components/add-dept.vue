@@ -62,7 +62,12 @@ export default {
             // 自定义校验模式
             validator: async(rule, value, callback) => {
               // value就是输入的编码
-              const result = await getDepartment()
+              let result = await getDepartment()
+              // 判断是否是编辑模式
+              if (this.formData.id) {
+                // 编辑场景 排除自身
+                result = result.filter(item => item.id !== this.formData.id)
+              }
               // result数组中是否存在 value值
               if (result.some(item => item.code === value)) {
                 callback(new Error('部门中已经有有该编码了'))
@@ -86,7 +91,12 @@ export default {
             // 自定义校验模式
             validator: async(rule, value, callback) => {
               // value就是输入的编码
-              const result = await getDepartment()
+              let result = await getDepartment()
+              // 判断是否是编辑模式
+              if (this.formData.id) {
+                // 编辑场景 排除自身
+                result = result.filter(item => item.id !== this.formData.id)
+              }
               // result数组中是否存在 value值
               if (result.some(item => item.name === value)) {
                 callback(new Error('部门中已经有有该名称了'))
