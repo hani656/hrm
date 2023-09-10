@@ -36,7 +36,8 @@
               <el-button size="mini" type="text">角色</el-button>
               <el-button size="mini" type="text">删除</el-button>
             </template>
-            <el-table-column /></el-table-column></el-table>
+          </el-table-column>
+        </el-table>
         <!-- 分页 -->
         <el-row style="height:60px" align="middle" type="flex" justify="end">
           <el-pagination
