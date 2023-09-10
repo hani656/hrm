@@ -6,7 +6,7 @@
         <el-button size="mini" type="primary" @click="showDialog = true">添加角色</el-button>
       </div>
       <!-- 放置table组件 -->
-      <el-table :data="List">
+      <el-table :data="list">
         <!-- 放置列 -->
         <el-table-column prop="name" align="center" width="200px" label="角色" />
         <el-table-column prop="state" align="center" width="200px" label="启用">
@@ -70,7 +70,7 @@ export default {
   name: 'Role',
   data() {
     return {
-      List: [],
+      list: [],
       showDialog: false, // 控制弹层显示隐藏
       // 将分页信息放置到一个对象中
       pageParams: {
@@ -95,7 +95,7 @@ export default {
   methods: {
     async getRoleList() {
       const { rows, total } = await getRoleList(this.pageParams)
-      this.List = rows // 赋值数据
+      this.list = rows // 赋值数据
       this.pageParams.total = total
     },
     // 切换分页时 请求新的数据
