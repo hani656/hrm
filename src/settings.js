@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '黑马人力资源后台管理系统', // 标题 网站的标题
+  title: '人力资源后台管理系统', // 标题 网站的标题
 
   /**
    * @type {boolean} true | false
