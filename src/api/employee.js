@@ -13,7 +13,6 @@ export function getEmployeeList(params) {
 /**
  * 导出员工的excel
  * **/
-
 export function exportEmployee() {
   return request({
     url: '/sys/user/export',
@@ -25,11 +24,21 @@ export function exportEmployee() {
 /**
  * 下载员工的导入模版
  * **/
-
 export function getExportTemplate() {
   return request({
     url: '/sys/user/import/template',
     // 改变接收数据的类型
     responseType: 'blob' // 使用blob接收二进制文件流
+  })
+}
+
+/**
+ * 上传用户的excel
+ * **/
+export function uploadExcel(data) {
+  return request({
+    url: '/sys/user/import',
+    method: 'post',
+    data // form-data类型 因为要上传文件类型
   })
 }
