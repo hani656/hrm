@@ -36,7 +36,9 @@
           <el-row>
             <el-col :span="12">
               <el-form-item label="部门" prop="departmentId">
-                <!-- 放置及联部门组件 会单独封装 -->
+                <!-- 放置级联部门组件 会单独封装 -->
+                <!-- class="inputW" 样式会给到selectTree中 template第一层的组件 也就是 <el-cascader /> 组件会有该样式-->
+                <select-tree class="inputW" />
               </el-form-item>
             </el-col>
           </el-row>
@@ -97,8 +99,9 @@
 </template>
 
 <script>
-
+import SelectTree from './components/select-tree.vue'
 export default {
+  components: { SelectTree },
   data() {
     return {
       userInfo: {
