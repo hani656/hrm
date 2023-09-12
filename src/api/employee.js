@@ -74,7 +74,7 @@ export function getEmployeeDetail(id) {
 }
 
 /**
- * 获取员工详情
+ * 更新员工
  * **/
 export function updateEmployee(data) {
   return request({
@@ -90,5 +90,16 @@ export function updateEmployee(data) {
 export function getEnableRoleList() {
   return request({
     url: '/sys/role/list/enabled'
+  })
+}
+
+/**
+ * 分配员工角色
+ * **/
+export function assignRole(data) {
+  return request({
+    url: '/sys/user/assignRoles',
+    method: 'put',
+    data
   })
 }
