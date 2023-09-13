@@ -14,6 +14,7 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+import { remove } from 'nprogress'
 
 /**
  * If you don't want to use mock-server
@@ -34,6 +35,25 @@ Vue.use(ElementUI)
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+// 注册自定义指令 控制功能权限
+Vue.directive('permission', {
+  // 会在指令作用的元素插入dom之后执行
+  inserted(el, binding) {
+    // el是当前指令作用的dom元素的对象
+    // binding 是 v-permission="表达式" 表达式的信息
+    console.log(el, binding)
+    const points = store.state.user.userInfo?.roles?.points || []
+    // 拿到了points
+    // points 中是否有add-employee
+    // binging.value v-permission="表达式"中的表达式的值
+    if (!points.includes(binding.value)) {
+      // 删除或禁用
+      el.remove()
+      // el.disabled = true // 禁用
+    }
+  }
+})
 
 new Vue({
   el: '#app',
