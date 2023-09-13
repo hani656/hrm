@@ -258,8 +258,9 @@ import { getHomeData, getMessageList } from '@/api/home'
 // import * as echarts from 'echarts' // 引入所有的echarts
 import * as echarts from 'echarts/core' // 引入核心包
 import { LineChart } from 'echarts/charts' // 引入折线图
-import { GridComponent } from 'echarts/components' // 引入组件
-import { CanvasRenderer } from 'echarts/renderers'
+import { GridComponent } from 'echarts/components' // 引入直角坐标系组件
+// 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
+import { CanvasRenderer } from 'echarts/renderers'// 注册必须的组件
 echarts.use([
   LineChart,
   GridComponent,
