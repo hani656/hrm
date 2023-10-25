@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="logo" />
     <div class="form">
-      <h1>登录</h1>
+      <h1>人力资源后台登录</h1>
       <el-card shadow="never" class="login-card">
         <!--登录表单-->
         <!-- el-form > el-form-item > el-input -->
@@ -95,7 +95,7 @@ export default {
   height: 100vh;
   .logo {
     flex: 3;
-    background: rgba(38, 72, 176) url(../../assets/common/login_back.png)
+    background: rgba(38, 72, 176) url(../../assets/common/123.png)
       no-repeat center / cover;
     border-top-right-radius: 60px;
     display: flex;
