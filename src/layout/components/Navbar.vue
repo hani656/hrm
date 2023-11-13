@@ -21,7 +21,7 @@
               首页
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
+          <a target="_self" href="#">
             <el-dropdown-item>项目地址</el-dropdown-item>
           </a>
           <!-- prevent阻止默认事件 -->
